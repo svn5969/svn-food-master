@@ -61,9 +61,15 @@ section{
 #error-button {
     border-radius: 6px;
 }
+#error-button{
+    padding:15px 30px;
+    background: #F06C4E;
+    border-radius: 0px 6px 6px 0px;
+    border-width: 0;
+    color:#FFFFFF
+}
 
-
-/******************recipe section style****************************/
+/*----------------food section----------------*/
 #food-section {
     display: grid;
     grid-template-columns: repeat(1,1fr);

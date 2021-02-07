@@ -15,7 +15,7 @@ let errorButton =document.getElementById("error-button");
 const allMenu =  document.getElementById("all-menu");
 
 
-//adding event handler to search menu by name
+//add event handler for search  by name
 searchButton.addEventListener("click",()=>{
     errorDiv.style.display="none";
     allMenu.innerHTML="";
@@ -29,7 +29,7 @@ searchButton.addEventListener("click",()=>{
 })
 
 
-//function to  get food name and image from api 
+//function for display food name and image from api 
 let foodMenu= foodName=>{
     let foodLink=`https://www.themealdb.com/api/json/v1/1/search.php?s=${foodName}`
     fetch(foodLink)
@@ -42,7 +42,7 @@ let foodMenu= foodName=>{
 
 
 
-//function to generate error message
+//function for display error message
 let displayErrorMessage =()=>{
     errorDiv.style.display="block";
     errorButton.addEventListener("click",(e)=>{
@@ -53,7 +53,7 @@ let displayErrorMessage =()=>{
 
 
 
-//function to show all matched items in menu 
+
 let showFood= data =>{
     let foodItems =data.meals;
     try {
@@ -72,7 +72,7 @@ let showFood= data =>{
             
             allMenu.appendChild(oneFood);
     
-            //adding evend handler on specific menu to see the ingredients
+            
             oneFood.addEventListener("click",function(e){
                 ul.innerHTML="";
                 let foodLink=`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${item.idMeal}`
@@ -83,7 +83,7 @@ let showFood= data =>{
                     showDetail(data);
                     displayIngredientList(data);
                     scrollTop();
-                    recipeSection.style.display="grid"
+                    foodSection.style.display="grid"
                 })
             })                 
         });  
@@ -93,7 +93,7 @@ let showFood= data =>{
 }
 
 
-//function to get image and header for specific(clicked) recipe
+
 let showDetail=data =>{
     console.log(data.meals);
     foodImage.src=data.meals[0].strMealThumb;
@@ -101,12 +101,13 @@ let showDetail=data =>{
     ingredients.innerText="Ingredients";
 }
 
-//function to get ingredients of specific(clicked) recipe and make a list
+// display ingredients Detail list function
 let displayIngredientList= data =>{
-    let mealObject = data.meals[0];
-        let size = Object.keys(mealObject).length;
+  // console.log(data.meals);
+   let mealObject = data.meals[0];
+       let size = Object.keys(mealObject).length;
        
-        for (let i = 1; i < size; i++) {
+        for (let i = 0; i < size; i++) {
             let index=i+"";
             let newDetail="strDetail"+index;
             let newIngredient="strIngredient"+index;
@@ -115,7 +116,7 @@ let displayIngredientList= data =>{
                  if ( eachIngredient!=="undefined undefined" && eachIngredient!==null) {
                      let li=document.createElement("li");
                      li.style.listStyle="none";
-                     li.innerHTML=`<i class="fas fa-check-square"></i>  ${eachIngredient}`;
+                     li.innerHTML=`${eachIngredient}`;
                      ul.appendChild(li);
                 }
             }
@@ -123,7 +124,7 @@ let displayIngredientList= data =>{
     }
 
 
-    //function to scroll at the recipe section to see the ingredients of each recipe
+    //function for scroll at the top
 let scrollTop=()=>{
     window.scroll({
         top: 90, 
