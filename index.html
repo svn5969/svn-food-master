@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>food-detail</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+       
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <section id="header-section">
+            <div id="header-div">
+                <div>
+                    <img src="images/clipart-food-cute-4.png" alt="">
+                    <h3>Hungry Burger</h3>
+                </div>
+                <div id="navigation-div">
+                    <ul id="nav-ul">
+                        <li id="dropdown-menu"><a href="#menu"><strong>Menu</strong></a></li>
+                        <li class="nav-li"><a href="#news">News</a></li>
+                        <li class="nav-li"><a href="#contact">Contact</a></li>
+                        <li class="nav-li"><a href="#about">About</a></li>
+                        <li class="nav-li"><a class="active" href="#home">Home</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </header>
+
+
+    <div class="container">
+        <form class="col-md-6 m-auto py-5">
+            <div class="input-group mb-3">
+                <input id ="food-search" type="text" class="form-control" placeholder="Enter a Meal Name ...">
+                <div class="input-group-append">
+                    <button id="search-button" type="button" class="btn btn-danger">Search</button>
+                </div>
+               
+                <div id="error-div">
+                    <img src="images/sad1.png" alt="">
+                    <h2 id="error-meggase">Sorry!!! I can't find this meal.Please try again with something else.</h2>
+                    <button id="error-button">Ok</button>
+                </div>
+
+            </div>
+        </form>
+        
+    </div>
+
+    <section id="food-section">
+        <div id="food-div">
+            <img id="food-image"src="" alt="">
+            <h2 id="food-name"></h2>
+            <h3 id="ingredients"></h3>
+            <ul id="ingredient-list"> 
+            </ul>
+        </div>
+    </section>
+
+
+
+    <section id="menu-section">
+        <div id="all-menu">
+        </div>
+    </section>
+
+
+<!-- <div class="container">
+    <h1>
+        Food Details
+    </h1>
+    <div id="searchFood">
+        <input type="text"
+        name="searchBar"
+        id="searchBar"
+        placeholder = "searchBar"
+        
+        >
+        <button>search</button>
+    </div>
+
+    <ul id="foodList">
+    
+    </ul> -->
+    
+<!-- </div> -->
+
+
+
+<!-- 
+    <div class="container">
+        <form class="col-md-6 m-auto py-5">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Enter a location for Weather ...">
+                <div class="input-group-append">
+                    <button type="button" class="btn btn-danger">Search</button>
+                </div>
+            </div>
+    </div>
+
+    <div class="food-detail">
+
+    </div>
+
+
+  
+
+<div class="foods">
+    
+</div> -->
+
+<script src="app.js"></script>
+</body>
+
+</html>
